@@ -1,9 +1,9 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Location extends Model {}
+class Image extends Model {};
 
-Location.init(
+Image.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,23 +11,15 @@ Location.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        city: {
-            type: DataTypes.STRING,
-            allowNull: false,
+        data: {
+            types: DataTypes.BLOB("long"),
+            notEmpty: true,
         },
-        state: {
+        location_id: {
             type: DataTypes.STRING,
-            allowNull: false,
-        },
-        attraction: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        blogPost_id: {
-            type: DataTypes.INTEGER,
             references: {
                 model: 'location',
-                id: 'id'
+                key: 'id'
             }
         },
         user_id: {
@@ -40,10 +32,11 @@ Location.init(
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'location'
+        modelName: 'image'
     }
 );
 
-module.exports = Location;
+module.exports = Image;

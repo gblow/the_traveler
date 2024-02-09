@@ -1,6 +1,10 @@
 const router = require('express').Router();
-const { User } = require('../models');
-// const withAuth = require('../utils/auth');
+const fs = require('fs');
+const { User, Location, BlogPost, Image } = require('../models');
+const withAuth = require('../utils/auth');
+const postValid = require('../utils/postValidator');
+const uploadImg = require('../utils/upload');
+
 
 router.get('/', withAuth, async (req, res) => {
   try {
@@ -28,5 +32,24 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+router.get('/blogPost', async (req, res) => {
+  try {
+    const postData = await BlogPost.findAll({
+      include: [
+        {
+          model: Location,
+          attributes: ['city', 'location']
+        },
+        {
+          model: Image,
+          attributes: ['']
+        }
+      ]
+    })
+  } catch (err) {
+
+  }
+})
 
 module.exports = router;
