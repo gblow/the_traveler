@@ -36,9 +36,7 @@ router.get('/Destination/:id', async (req, res) => {
           attributes: [
             'id',
             'title',
-            'artist',
-            'exhibition_date',
-            'filename',
+            'locationName',
             'description',
           ],
         },
