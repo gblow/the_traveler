@@ -46,10 +46,18 @@ router.get('/blogPost', async (req, res) => {
           attributes: ['']
         }
       ]
-    })
-  } catch (err) {
+    });
 
+    const blogPosts = dbBlogData.map((postData) =>
+      postData.get({ plain: true })
+    );
+    res.render('homepage', {
+      blogPosts,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    res.status(500).json(err);
   }
-})
+});
 
 module.exports = router;
