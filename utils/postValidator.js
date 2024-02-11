@@ -1,9 +1,11 @@
 const router = require('express').Router();
+const express = require('express');
 const app = express();
 const { User, Location, BlogPost } = require('../controllers');
 
 
-app.use(express.json());
+
+router.use(express.json());
 
 app.post('/blogPost', (req, res) => {
     post.create({
@@ -18,6 +20,7 @@ app.post('/blogPost', (req, res) => {
 });
 
 const { body, validationResult } = require('express-validator')
+
 
 app.post(
     '/blogPost',
