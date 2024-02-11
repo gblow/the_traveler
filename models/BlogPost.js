@@ -23,14 +23,14 @@ BlogPost.init(
             notEmpty: true,
         },
         image_id: {
-            type: DataTypes.BLOB("long"),
+            type: DataTypes.INTEGER,
             references: {
                 model: 'image',
                 key: 'id'
             }
         },
         location_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'location',
                 key: 'id'

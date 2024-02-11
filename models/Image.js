@@ -12,11 +12,11 @@ Image.init(
             autoIncrement: true,
         },
         data: {
-            types: DataTypes.BLOB("long"),
+            type: DataTypes.BLOB,
             notEmpty: true,
         },
         location_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'location',
                 key: 'id'
