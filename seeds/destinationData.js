@@ -1,4 +1,4 @@
-const { Destinations } = require('../models');
+const { Location } = require('../models');
 
 const destinationdata = [
   {
@@ -205,7 +205,7 @@ const destinationdata = [
 
 
 
-const seedDestinations = () => Destinations.bulkCreate(destinationdata);
+const seedDestinations = () => Location.bulkCreate(destinationdata);
 
 
 module.exports = seedDestinations;
