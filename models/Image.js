@@ -11,9 +11,10 @@ Image.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        data: {
-            types: DataTypes.BLOB("long"),
+        images: {
+            type: DataTypes.STRING,
             notEmpty: true,
+            allowNull: false,
         },
         location_id: {
             type: DataTypes.STRING,

@@ -2,11 +2,11 @@ const router = require('express').Router();
 const fs = require('fs');
 const { User, Location, BlogPost, Image } = require('../models');
 const withAuth = require('../utils/auth');
-const postValid = require('../utils/postValidator');
-const uploadImg = require('../utils/upload');
+
 
 
 router.get('/', withAuth, async (req, res) => {
+  console.log(req.session)
   try {
     const userData = await User.findAll({
       attributes: { exclude: ['password'] },
@@ -23,7 +23,9 @@ router.get('/', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+router.get('/', async (req,res) => {
 
+})
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
@@ -35,24 +37,14 @@ router.get('/login', (req, res) => {
 
 router.get('/blogPost', async (req, res) => {
   try {
-    const postData = await BlogPost.findAll({
-      include: [
-        {
-          model: Location,
-          attributes: ['city', 'location']
-        },
-        {
-          model: Image,
-          attributes: ['']
-        }
-      ]
-    });
+    const postData = await BlogPost.findAll();
 
     const blogPosts = dbBlogData.map((postData) =>
       postData.get({ plain: true })
     );
-    res.render('homepage', {
+    res.render('/', {
       blogPosts,
+      postData,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
