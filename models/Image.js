@@ -11,12 +11,14 @@ Image.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        data: {
-            type: DataTypes.BLOB,
+        images: {
+            type: DataTypes.STRING,
             notEmpty: true,
+            allowNull: false,
         },
         location_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'location',
                 key: 'id'
@@ -24,9 +26,10 @@ Image.init(
         },
         user_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'user',
-                id: 'id'
+                key: 'id'
             }
         },
     },
