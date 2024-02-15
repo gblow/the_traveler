@@ -4,13 +4,12 @@ const { User, Location, BlogPost, Image } = require('../models');
 const withAuth = require('../utils/auth');
 
 
+router.get('/', async (req, res) => {
 
-router.get('/', withAuth, async (req, res) => {
-  console.log(req.session)
   try {
     const userData = await User.findAll({
       attributes: { exclude: ['password'] },
-      order: [['name', 'ASC']],
+      order: [['username', 'ASC']],
     });
 
     const users = userData.map((project) => project.get({ plain: true }));
@@ -27,7 +26,7 @@ router.get('/', async (req,res) => {
 
 })
 router.get('/login', (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session?.logged_in) {
     res.redirect('/');
     return;
   }

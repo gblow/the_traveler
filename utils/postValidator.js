@@ -1,3 +1,4 @@
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -7,7 +8,7 @@ const blogPostValidation = {
     body: Joi.object({
         title: Joi.string()
         .required(),
-
+      
         post: Joi.string()
         .required(),
 
@@ -23,6 +24,7 @@ console.log(blogPostValidation);
 
 app.use(bodyParser.json());
 app.use(express.json());
+router.use(express.json());
 
 app.use(function(err, req, res, next) {
     if(err instanceof ValidationError) {
@@ -44,4 +46,6 @@ app.post('/blogPost', validate(blogPostValidation, {}, {}), (req, res) => {
     }).then(post => res.json(post))
 });
 
+
 app.listen(3000)
+
