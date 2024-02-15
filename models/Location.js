@@ -27,14 +27,14 @@ Location.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'location',
-                id: 'id'
+                key: 'id'
             }
         },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
-                id: 'id'
+                key: 'id'
             }
         },
     },

@@ -26,6 +26,12 @@ BlogPost.hasOne(Image, {
 
 BlogPost.belongsTo(User, {
     foreignKey: 'user_id',
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE'
 });
-
+Location.hasOne(Image, {
+    foreignKey: 'image_id',
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE'
+})
 module.exports = { User, Location, BlogPost, Image };
