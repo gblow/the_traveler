@@ -15,10 +15,11 @@ const loginFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/');
       } else {
-        throw new Error('Failed to log in.');
+        console.log(response.json);
+        // throw new Error('Failed to log in.');
       }
-    } catch (error) {
-      console.error('Login error:', error);
+    } catch (e) {
+      console.error('Login error:', e);
       alert('Failed to log in. Please try again.');
     }
   }
