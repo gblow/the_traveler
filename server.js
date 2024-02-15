@@ -12,7 +12,7 @@ const session = require('express-session');
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-router.use(express.json());
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(bodyParser.json());
