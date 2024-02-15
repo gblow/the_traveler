@@ -23,7 +23,7 @@ BlogPost.init(
             notEmpty: true,
         },
         image_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
             references: {
                 model: 'image',
@@ -31,7 +31,7 @@ BlogPost.init(
             }
         },
         location_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
             references: {
                 model: 'location',
@@ -43,7 +43,7 @@ BlogPost.init(
             allowNull: false,
             references: {
                 model: 'user',
-                id: 'id'
+                key: 'id'
             }
         },
     },
