@@ -15,7 +15,7 @@ One does not need to install anything to use the project. One simply visits the 
 
 ## Usage
 
-One navigates the site by clicking on the various buttons available. To log-in one or sign-up one simply clicks the login button. To visit the homepage one simply clicks the home button. To post an image or text one simply clicks the buttons indicated. 
+One navigates the site by clicking on the various buttons available. To log-in one simply clicks the login button. To sign-up one simply enters the necessary information on the log-in screen and clicks the button to submit. To visit the homepage one simply clicks the home button. To post an image or text one simply clicks the buttons indicated. 
 
 ## Credits
 
