@@ -5,5 +5,5 @@ CREATE DATABASE traveler_db;
 
 SHOW TABLES;
 
-SELECT * FROM `user`;
+-- SELECT * FROM `user`;
 
