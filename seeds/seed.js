@@ -3,7 +3,7 @@ const seedUsers = require('./userData');
 const seedDestinations = require('./destinationData');
 
 const seedAll = async () => {
-  await sequelize.sync({ force: true });
+  await sequelize.sync({ force: false });
 
   await seedDestinations();
 

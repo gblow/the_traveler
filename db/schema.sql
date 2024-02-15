@@ -3,7 +3,7 @@ DROP DATABASE IF EXISTS traveler_db;
 
 CREATE DATABASE traveler_db;
 
-SHOW TABLES;
+-- SHOW TABLES;
 
-SELECT * FROM `user`;
+-- SELECT * FROM `user`;
 

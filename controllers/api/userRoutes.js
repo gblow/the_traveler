@@ -1,11 +1,14 @@
 const router = require('express').Router();
-const { User } = require('../../models/User');
+const { User } = require('../../models/index.js');
 
 router.post('/login', async (req, res) => {
+  console.log(req.body);
     try {
       const userData = await User.findOne({ where: { email: req.body.email } });
   
       if (!userData) {
+        console.log(userData);
+    
         res
           .status(400)
           .json({ message: 'Incorrect email or password, please try again' });
@@ -15,6 +18,7 @@ router.post('/login', async (req, res) => {
       const validPassword = await userData.checkPassword(req.body.password);
   
       if (!validPassword) {
+        console.log(validPassword);
         res
           .status(400)
           .json({ message: 'Incorrect email or password, please try again' });
@@ -29,6 +33,7 @@ router.post('/login', async (req, res) => {
       });
   
     } catch (err) {
+      console.log(err);
       res.status(400).json(err);
     }
   });
