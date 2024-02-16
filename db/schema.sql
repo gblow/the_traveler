@@ -2,3 +2,7 @@
 DROP DATABASE IF EXISTS traveler_db;
 
 CREATE DATABASE traveler_db;
+
+SHOW TABLES;
+
+SELECT * FROM user;
