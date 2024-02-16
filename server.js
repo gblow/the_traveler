@@ -4,9 +4,8 @@ const router = require('express').Router()
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3306;
 const sequelize = require('./config/connection');
-const { validate, ValidationError, Joi } = require('express-validation')
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -17,8 +16,13 @@ const sess = {
   saveUninitialized: true,
   store: new SequelizeStore({
     db: sequelize
-  })
+  }),
 };
+
+// var sequelize = new Sequelize("database", "username", "password", {
+//   dialect: "mysql",
+//   storage: "./session.sqlite",
+// });
 
 app.use(session(sess));
 app.engine('handlebars', hbs.engine);
