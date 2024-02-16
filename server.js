@@ -7,10 +7,13 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const routes = require('./controllers')
 const sequelize = require('./config/connection');
-const helpers = require('./utils');
+const withAuth = require('./utils/auth');
+const postValidator = require('./utils/postValidator');
+const uploadImg = require('./utils/upload');
+
 
 const app = express();
-const PORT = process.env.PORT || 3306;
+const PORT = process.env.PORT || 3001;
 
 
 const sess = {
@@ -31,7 +34,7 @@ const sess = {
 
 app.use(session(sess));
 
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ withAuth, postValidator, uploadImg });
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -41,7 +44,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use(require(routes));
+app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
