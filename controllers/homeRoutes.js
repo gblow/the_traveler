@@ -32,6 +32,7 @@ console.log(req.session);
   res.render('login');
 });
 
+
 router.get('/postDetails', async (req, res) => {
   try {
     const postData = await BlogPost.findAll();
@@ -42,7 +43,7 @@ router.get('/postDetails', async (req, res) => {
     res.render('locationDetails', {
       blogPosts,
       postData,
-      loggedIn: req.session.loggedIn,
+      loggedIn: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -56,7 +57,7 @@ router.get('/dashboard', async (req, res) => {
   }
 
   res.render('dashboard', {
-    logged_in: req.session.logged_in,
+    loggedIn: req.session.logged_in,
   })
   })
 
