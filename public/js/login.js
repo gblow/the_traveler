@@ -44,7 +44,9 @@ const signupFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/');
       } else {
-        throw new Error('Failed to sign up.');
+        const responseData = await response.json();
+        console.log(responseData)
+        // throw new Error('Failed to sign up.');
       }
     } catch (error) {
       console.error('Signup error:', error);
