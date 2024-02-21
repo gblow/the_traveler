@@ -13,7 +13,7 @@
     <h2>Let's Take a Trip!</h2>
     <h3><nav id="nav-btns">
     <a href="/">Home</a>
-    {{#if loggedIn}}
+    {{#if logged_in}}
     <button id="logout" class="btn-no-style">Logout</button>
     {{else}}
     <a href="/login">Login</a>
@@ -30,7 +30,7 @@
       {{{body}}}
     </div>
   </main>
-  {{#if loggedIn}}
+  {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
