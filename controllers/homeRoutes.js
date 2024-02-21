@@ -28,6 +28,7 @@ router.get('/login', (req, res) => {
 console.log(req.session);
   res.render('login');
 });
+
 router.get('/signup', (req, res) => {
  
   console.log(req.session);
