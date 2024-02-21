@@ -24,13 +24,16 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // if (req.session?.logged_in) {
-  //   res.redirect('/');
-  //   return;
-  // }
+ 
 console.log(req.session);
   res.render('login');
 });
+
+router.get('/signup', (req, res) => {
+ 
+  console.log(req.session);
+    res.render('signup');
+  });
 
 router.get('/postDetails', async (req, res) => {
   try {
