@@ -8,29 +8,31 @@
   <link rel="stylesheet" type="text/css" href="/css/posts.css">
 </head>
 
-<body>
+<body id="bg-collage">
   <header>
-    <h1>Where Will You Travel Next?</h1>
-  </header>
-  <nav>
+    <h2>Let's Take a Trip!</h2>
+    <h3><nav id="nav-btns">
     <a href="/">Home</a>
     {{#if loggedIn}}
-    <a href="/api/user/logout"><button id="logout" class="btn-no-style">Logout</button></a>
+    <button id="logout" class="btn-no-style">Logout</button>
     <a href="/dashboard">Dashboard</a>
     {{else}}
     <a href="/login">Login</a>
     <a href="/dashboard">Dashboard</a>
     {{/if}}
-  </nav>
+  </nav></h3>
+  </header>
+  
   <main>
-    <aside>
-      <h2>Let's Take a Trip!</h2>
-    </aside>
+    <section>
+      <h1 id="travel-title">The Traveler</h1>
+      <h2 id="travel-sub-title"> Where Will You Travel Next?</h2>
+    </section>
     <div class="destination">
       {{{body}}}
     </div>
   </main>
-  {{#if loggedIn}}
+  {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
