@@ -10,10 +10,11 @@
 </head>
 <body id="bg-collage">
   <header>
-    <h2>Let's Take a Trip!</h2>
+    <h2 id="header-trip">Let's Take a Trip!</h2>
     <h3><nav id="nav-btns">
     <a href="/">Home</a>
     {{#if loggedIn}}
+
     <button id="logout" class="btn-no-style">Logout</button>
     <a href="/dashboard">Dashboard</a>
     {{else}}
@@ -29,10 +30,6 @@
     </div>
   
   <main>
-    <section>
-      <h1 id="travel-title">The Traveler</h1>
-      <h2 id="travel-sub-title"> Where Will You Travel Next?</h2>
-    </section>
     <div class="destination">
       {{{body}}}
     </div>
