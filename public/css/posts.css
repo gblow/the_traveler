@@ -22,11 +22,6 @@ header {
     
 
 }
-main {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
 
 section {
     display: flex;
@@ -35,7 +30,6 @@ section {
 }
 
 body {
-    display: flex;
     background-color: #36454f;
 }
 
@@ -108,12 +102,9 @@ ul {
 
 .cntr-title {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex-flow: column wrap;
     justify-items: center;
     align-items: center;
-    /* margin-top: 24%;
-    margin-left: 36%; */
     width: 550px;
     height: 180px;
     border: hidden 10px;
