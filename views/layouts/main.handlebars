@@ -12,11 +12,14 @@
   <header>
     <h2 id="header-trip">Let's Take a Trip!</h2>
     <h3><nav id="nav-btns">
-    <a href="/">Home</a> <span> | </span>
-    {{#if logged_in}}
+    <a href="/">Home</a>
+    {{#if loggedIn}}
+
     <button id="logout" class="btn-no-style">Logout</button>
+    <a href="/dashboard">Dashboard</a>
     {{else}}
     <a href="/login">Login</a>
+    <a href="/dashboard">Dashboard</a>
     {{/if}}
   </nav></h3>
   </header>
