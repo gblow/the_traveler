@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 
     const users = userData.map((project) => project.get({ plain: true }));
 
-    res.render('/', {
+    res.render('homepage', {
       users,
       logged_in: req.session.logged_in,
     });
@@ -22,26 +22,27 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-router.get('/', async (req,res) => {
 
-})
 router.get('/login', (req, res) => {
-  if (req.session?.logged_in) {
-    res.redirect('/');
-    return;
-  }
-
+ 
+console.log(req.session);
   res.render('login');
 });
 
-router.get('/blogPost', async (req, res) => {
+router.get('/signup', (req, res) => {
+ 
+  console.log(req.session);
+    res.render('signup');
+  });
+
+router.get('/postDetails', async (req, res) => {
   try {
     const postData = await BlogPost.findAll();
 
     const blogPosts = dbBlogData.map((postData) =>
       postData.get({ plain: true })
     );
-    res.render('/', {
+    res.render('locationDetails', {
       blogPosts,
       postData,
       loggedIn: req.session.loggedIn,
@@ -50,5 +51,16 @@ router.get('/blogPost', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/dashboard', async (req, res) => {
+  if (!req.session?.logged_in) {
+    res.redirect('/login');
+    return;
+  }
+
+  res.render('dashboard', {
+    logged_in: req.session.logged_in,
+  })
+  })
 
 module.exports = router;

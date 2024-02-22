@@ -6,29 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Traveler</title>
   <link rel="stylesheet" type="text/css" href="/css/posts.css">
+  
 </head>
-
-<body>
+<body id="bg-collage">
   <header>
-    <h1>Where Will You Travel Next?</h1>
-  </header>
-  <nav>
+    <h2>Let's Take a Trip!</h2>
+    <h3><nav id="nav-btns">
     <a href="/">Home</a>
-    {{#if loggedIn}}
+    {{#if logged_in}}
     <button id="logout" class="btn-no-style">Logout</button>
     {{else}}
     <a href="/login">Login</a>
     {{/if}}
-  </nav>
+  </nav></h3>
+  </header>
+
+  <div class="cntr-title">
+      <h1 id="travel-title">The Traveler</h1>
+      <h2 id="travel-sub-title"> Where Will You Travel Next?</h2>
+    </div>
+  
   <main>
-    <aside>
-      <h2>Let's Take a Trip!</h2>
-    </aside>
     <div class="destination">
       {{{body}}}
     </div>
   </main>
-  {{#if loggedIn}}
+  {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
