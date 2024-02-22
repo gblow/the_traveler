@@ -4,6 +4,8 @@
 Our motivation in building this project was to create  an online space for users to gather and share information and pictures about their travels. We built this project to help overcome the problem of wanting to share our stories but not having a space to do so. We learned a lot about the Model View Controller pattern and connecting the back-end to the front-end. We overcame many obstacles to make this site a reality.
 
 ## Table of Contents
+- [Website](#website)
+- [Screenshot](#screenshot)
 - [Installation](#installation)
  - [Usage](#usage)
   - [Credits](#credits)
@@ -14,8 +16,8 @@ Our motivation in building this project was to create  an online space for users
 https://warm-beach-15393-1a7122cd0dcb.herokuapp.com/
 
 ## Screenshot
+![Screenshot](https://github.com/gblow/the_traveler/assets/110747626/05ceca80-9984-41d0-804b-f8ee65c923ff)
 
-./public/images/Screenshot.jpg
 
 ## Installation
 
