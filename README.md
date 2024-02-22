@@ -19,7 +19,7 @@ One navigates the site by clicking on the various buttons available. To log-in o
 
 ## Credits
 
-To complete this project our group heavily leaned on one another, and received help from other resources. We consulted StackOverflow and received help from our instructor and teaching assistant. We also relied on code from in-class activities.
+To complete this project our group heavily leaned on one another, and received help from other resources. We consulted StackOverflow and received help from our instructor and teaching assistant as well as tutors. We also relied on code from in-class activities.
 
 ## License
 
